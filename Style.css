@@ -1,0 +1,434 @@
+/* --- Base --- */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #0b0507;
+  color: #f4e9f2;
+  line-height: 1.6;
+}
+
+/* Palette principale */
+:root {
+  --noir-profond: #050308;
+  --noir-velours: #12060a;
+  --rouge-vin: #6c1024;
+  --rouge-vin-prof: #3b0714;
+  --or-doux: #d3a96a;
+  --or-intense: #f0c57e;
+  --texte-clair: #f5edf8;
+  --texte-muted: #b49fae;
+}
+
+/* Liens généraux */
+
+a {
+  color: var(--or-doux);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* --- Header & navigation --- */
+
+.header-noire {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: linear-gradient(to bottom, #080307ee, #080307cc, transparent);
+  backdrop-filter: blur(10px);
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0.8rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.logo-zone {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo-initiales {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: 1px solid var(--or-doux);
+  font-family: "Playfair Display", "Times New Roman", serif;
+  font-size: 1.1rem;
+  color: var(--or-intense);
+  background: radial-gradient(circle at 30% 20%, #8c1a33, #28030a);
+}
+
+.logo-texte {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-titre {
+  font-family: "Playfair Display", "Times New Roman", serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.logo-sous-titre {
+  font-size: 0.8rem;
+  color: var(--texte-muted);
+}
+
+.nav-noire {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  justify-content: flex-end;
+}
+
+.nav-noire a {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+}
+
+.nav-noire a:hover {
+  border-color: var(--or-doux);
+  background: rgba(9, 3, 6, 0.8);
+}
+
+/* --- Hero --- */
+
+.hero-noire {
+  position: relative;
+  min-height: 70vh;
+  padding: 5rem 1.5rem 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(circle at top left, rgba(140, 26, 51, 0.6), transparent 55%),
+    radial-gradient(circle at bottom right, rgba(45, 8, 20, 0.9), #050308 70%);
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 10% 10%, rgba(255, 255, 255, 0.03), transparent 40%),
+    radial-gradient(circle at 80% 90%, rgba(255, 214, 150, 0.06), transparent 45%);
+  mix-blend-mode: screen;
+  opacity: 0.9;
+}
+
+.hero-contenu {
+  position: relative;
+  max-width: 800px;
+  text-align: center;
+  z-index: 1;
+}
+
+.hero-noire h1 {
+  font-family: "Playfair Display", "Times New Roman", serif;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  font-size: 2.2rem;
+  margin-bottom: 1.2rem;
+  color: var(--or-intense);
+}
+
+.hero-sous-titre {
+  font-size: 1rem;
+  max-width: 650px;
+  margin: 0 auto 1rem;
+  color: #f8eaf1;
+}
+
+.hero-citation {
+  font-family: "Playfair Display", "Times New Roman", serif;
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--or-doux);
+  margin-bottom: 2rem;
+}
+
+.hero-boutons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  justify-content: center;
+}
+
+/* --- Boutons --- */
+
+.btn-principal,
+.btn-secondaire,
+.btn-protocole {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1.8rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-principal {
+  background: linear-gradient(135deg, var(--rouge-vin), var(--rouge-vin-prof));
+  color: #fff;
+  border-color: #000;
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.7);
+}
+
+.btn-principal:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.9);
+}
+
+.btn-secondaire {
+  background: transparent;
+  color: var(--or-doux);
+  border-color: var(--or-doux);
+}
+
+.btn-secondaire:hover {
+  background: rgba(10, 4, 6, 0.9);
+}
+
+.btn-protocole {
+  margin-top: 1.3rem;
+  border-color: var(--or-doux);
+  color: var(--or-intense);
+  background: rgba(10, 4, 6, 0.9);
+}
+
+.btn-protocole:hover {
+  background: linear-gradient(135deg, #1a060a, #3b0714);
+}
+
+/* --- Sections générales --- */
+
+.section-noire {
+  padding: 3rem 1.5rem;
+  background: radial-gradient(circle at top, #16050b, #050308 65%);
+}
+
+.section-noire-alt {
+  background: radial-gradient(circle at top, #0d0406, #050308 70%);
+}
+
+.section-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.section-titre {
+  font-family: "Playfair Display", "Times New Roman", serif;
+  font-size: 1.8rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  margin-bottom: 1.8rem;
+  color: var(--or-intense);
+}
+
+.section-noire p {
+  margin-bottom: 1rem;
+  color: var(--texte-clair);
+}
+
+.section-noire strong {
+  color: var(--or-doux);
+}
+
+/* --- Listes --- */
+
+.liste-pratiques,
+.liste-protocole,
+.liste-partenaire {
+  list-style: none;
+  margin: 0 0 1rem 0;
+  padding: 0;
+}
+
+.liste-pratiques li,
+.liste-protocole li,
+.liste-partenaire li {
+  position: relative;
+  padding-left: 1.4rem;
+  margin-bottom: 0.4rem;
+  color: var(--texte-muted);
+}
+
+.liste-pratiques li::before,
+.liste-protocole li::before,
+.liste-partenaire li::before {
+  content: "♦";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--or-doux);
+  font-size: 0.7rem;
+  transform: translateY(0.3rem);
+}
+
+/* --- Tarifs --- */
+
+.tarifs-grille {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.carte-tarif {
+  border-radius: 14px;
+  border: 1px solid rgba(211, 169, 106, 0.3);
+  background: radial-gradient(circle at top left, rgba(140, 26, 51, 0.25), rgba(5, 3, 8, 0.95));
+  padding: 1.2rem 1.3rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.55);
+}
+
+.carte-tarif h3 {
+  font-family: "Playfair Display", "Times New Roman", serif;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  margin-bottom: 0.4rem;
+  color: var(--or-intense);
+}
+
+.tarif-montant {
+  font-weight: 600;
+  color: var(--texte-clair);
+  margin-bottom: 0.4rem;
+}
+
+.tarif-details {
+  font-size: 0.9rem;
+  color: var(--texte-muted);
+}
+
+.tarif-note {
+  font-size: 0.85rem;
+  color: var(--texte-muted);
+  margin-top: 1.2rem;
+}
+
+/* --- Duo & partenaires --- */
+
+.duo-liens {
+  margin-top: 1.3rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+/* --- Contact --- */
+
+.section-contact .contact-modes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.4rem;
+  margin: 1.2rem 0 1.5rem;
+}
+
+.contact-bloc {
+  border-radius: 10px;
+  border: 1px solid rgba(211, 169, 106, 0.28);
+  padding: 1rem 1.1rem;
+  background: radial-gradient(circle at top, #18060b, #050308 70%);
+}
+
+.contact-bloc h3 {
+  font-family: "Playfair Display", "Times New Roman", serif;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  margin-bottom: 0.5rem;
+  color: var(--or-doux);
+}
+
+/* --- Footer --- */
+
+.footer-noire {
+  padding: 2rem 1.5rem 2.5rem;
+  background: #030104;
+  border-top: 1px solid rgba(211, 169, 106, 0.28);
+}
+
+.footer-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-titre {
+  font-family: "Playfair Display", "Times New Roman", serif;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.9rem;
+  color: var(--or-intense);
+  margin-bottom: 0.5rem;
+}
+
+.footer-texte {
+  font-size: 0.85rem;
+  color: var(--texte-muted);
+  margin-bottom: 0.6rem;
+}
+
+.footer-liens a {
+  font-size: 0.8rem;
+  color: var(--or-doux);
+}
+
+.footer-liens a:hover {
+  text-decoration: underline;
+}
+
+/* --- Responsive --- */
+
+@media (max-width: 768px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+
+  .nav-noire {
+    justify-content: flex-start;
+  }
+
+  .hero-noire {
+    padding-top: 4.5rem;
+  }
+
+  .hero-noire h1 {
+    font-size: 1.8rem;
+    letter-spacing: 0.18em;
+  }
+}
